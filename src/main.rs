@@ -16,9 +16,9 @@ fn main()
     println!("Adivina el numero");
 
     set_timeout(|| {
-        println!("Por favor entra un numero entre 1-5");
+        println!("Por favor entra un numero entre 1-100");
     }, 3);
-    let secret_number = rand::thread_rng().gen_range(1..=5);
+    let secret_number = rand::thread_rng().gen_range(1..=100);
     //-snip--
     let mut guess = String::new();
 
@@ -56,7 +56,7 @@ fn main()
             println!("El numero secreto es {secret_number} ");
         } else 
         {
-            println!("El numero incorrecto");
+            println!("El numero es incorrecto");
             fn set_timeout(callback: fn() -> (), time: u64) ->()
             {sleep(Duration::from_secs(time));
             callback();}
